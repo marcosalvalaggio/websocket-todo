@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Teose</title>
+    <style>
+        body {
+            background-color: #f3f4f7;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- Right Column: Form to Enter Todo Values -->
+            <div class="col-md-6 mt-4">
+                <h2>Areo</h2>
+                <form id="todo-form">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Mail</label>
+                        <input type="text" id="email" name="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="number">Numero</label>
+                        <input type="text" id="number" name="number" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="note">Note</label>
+                        <textarea id="note" name="note" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="priority">Priorità</label>
+                        <select id="priority" name="priority" class="form-control">
+                            <option value="None">None</option>
+                            <option value="Alta">Alta</option>
+                            <option value="Media">Media</option>
+                            <option value="Bassa">Bassa</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" type="button" onclick="sendDataToServer()">✉️</button>
+                </form>
+            </div>
+            <!-- Left Column: Display Todos from MongoDB Collection -->
+            <div class="col-md-6 mt-4">
+                <h2>Bacheca</h2>
+                <div id="messages"></div>
+            </div>
+        </div>
+    </div>
+    <script src="client.js"></script>
+</body>
+</html>
