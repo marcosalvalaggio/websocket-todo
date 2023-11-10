@@ -5,14 +5,14 @@ A simple example of a TODO app currently utilized at my company for tracking and
 
 ## Raspberry Setup
 
-* Setup a raspberry with a static IP in the same network of the clients that want to use the app.
-* Boot in the raspberry using ssh
-* Create a systemd service:
+* Set up a Raspberry Pi with a static IP address on the same network as the clients who want to use the app.
+* Boot the Raspberry Pi using SSH.
+* Create a systemd service.
 
 ```console
 sudo nano /etc/systemd/system/webapp.service
 ```
-I wrote the following config file: 
+Config file: 
 
 ```console
 [Unit]
@@ -29,7 +29,7 @@ Restart=always
 WantedBy=multi-user.target
 ```
 
-then,
+then execute,
 
 ```console
 sudo systemctl daemon-reload
@@ -37,10 +37,10 @@ sudo systemctl enable webapp.service
 sudo reboot
 ```
 
-after the reboot you can check the status of the service with the command:
+After the reboot, you can check the status of the service with the command:
 
 ```console
 sudo systemctl status teose.service
 ```
 
-you have to see the service "enable".
+You have to check if the service is "enabled."
